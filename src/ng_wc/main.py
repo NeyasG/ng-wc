@@ -1,5 +1,6 @@
 """Main module for ng-wc."""
 
+
 def main(bar: str) -> str:
     """Summary line.
 
@@ -11,7 +12,6 @@ def main(bar: str) -> str:
     Returns:
         Description of return value
     """
-
     return bar
 
 

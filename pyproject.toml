@@ -1,0 +1,113 @@
+[project]
+name = "ng-wc"
+version = "0.0.1"
+description = "Personal project to build my own version of the wc unix command line tool"
+authors = [
+    { name = "Neyas Guruswamy", email = "neyasg@gmail.com" },
+]
+readme = "README.md"
+keywords = ['python']
+requires-python = ">=3.10,<4.0"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://NeyasG.github.io/ng-wc/"
+Repository = "https://github.com/NeyasG/ng-wc"
+Documentation = "https://NeyasG.github.io/ng-wc/"
+
+[dependency-groups]
+dev = [
+    "commitizen>=3.13.0",
+    "pytest>=9.0.2",
+    "prek>=0.3.3",
+    "ty>=0.0.14",
+    "ruff>=0.14.14",
+    "zensical>=0.0.15",
+    "mkdocstrings-python>=2.0.0",
+    "deptry>=0.24.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.0,<0.11.0"]
+build-backend = "uv_build"
+
+
+[tool.uv.build-backend]
+module-root = "src"
+
+[tool.ty.rules]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+fix = true
+
+[tool.ruff.lint]
+select = [
+    # flake8-2020
+    "YTT",
+    # flake8-bandit
+    "S",
+    # flake8-bugbear
+    "B",
+    # flake8-builtins
+    "A",
+    # flake8-comprehensions
+    "C4",
+    # flake8-debugger
+    "T10",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # mccabe
+    "C90",
+    # pycodestyle
+    "E",
+    # pydocstyle
+    "D",
+    "W",
+    # pyflakes
+    "F",
+    # pygrep-hooks
+    "PGH",
+    # pyupgrade
+    "UP",
+    # ruff
+    "RUF",
+    # tryceratops
+    "TRY",
+]
+ignore = [
+    # LineTooLong
+    "E501",
+    # DoNotAssignLambda
+    "E731",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.ruff.format]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version_provider = "uv"
+update_changelog_on_bump = true
+tag_format = "v$version"
+version_scheme = "semver"

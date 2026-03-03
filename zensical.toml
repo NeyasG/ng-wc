@@ -1,0 +1,55 @@
+[project]
+site_name = "ng-wc"
+site_url = "https://github.com/NeyasG/ng-wc"
+repo_url = "https://NeyasG.github.io/ng-wc"
+site_description =  "Personal project to build my own version of the wc unix command line tool"
+site_author = "Neyas Guruswamy"
+edit_uri = "edit/main/docs/"
+repo_name = "NeyasG/ng-wc"
+copyright = 'Maintained by <a href="https://NeyasG.com">NeyasG</a>.'
+
+[project.theme]
+variant = "modern"
+features = [
+    "navigation.tab",
+    "navigation.sections",
+    "navigation.expand",
+    "navigation.indexes",
+    "navigation.path",
+    "navigation.top",
+    "header.autohide",
+    "navigation.footer",
+    "navigation.tracking",
+]
+
+# Palette toggle for automatic mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[project.plugins.mkdocstrings]
+default_handler = "python"
+
+[project.plugins.mkdocstrings.handlers.python]
+inventories = ["https://docs.python.org/3/objects.inv"]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+inherited_members = true
+show_source = false

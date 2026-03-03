@@ -1,5 +1,6 @@
 """Tests for ng-wc."""
 
-def example_test():
+
+def test_example():
     """Validate the test runner setup."""
     assert 1 == 1

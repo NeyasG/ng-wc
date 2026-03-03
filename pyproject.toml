@@ -2,9 +2,7 @@
 name = "ng-wc"
 version = "0.0.1"
 description = "Personal project to build my own version of the wc unix command line tool"
-authors = [
-    { name = "Neyas Guruswamy", email = "neyasg@gmail.com" },
-]
+authors = [{ name = "Neyas Guruswamy", email = "neyasg@gmail.com" }]
 readme = "README.md"
 keywords = ['python']
 requires-python = ">=3.10,<4.0"
@@ -24,6 +22,9 @@ classifiers = [
 Homepage = "https://NeyasG.github.io/ng-wc/"
 Repository = "https://github.com/NeyasG/ng-wc"
 Documentation = "https://NeyasG.github.io/ng-wc/"
+
+[project.scripts]
+ngwc = "ng_wc:main"
 
 [dependency-groups]
 dev = [
@@ -101,7 +102,7 @@ ignore = [
 convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = ["S101"]
+"tests/*" = ["S101", "D101", "D102"]
 
 [tool.ruff.format]
 

@@ -1,6 +1,11 @@
 """Tests for ng-wc."""
 
+import subprocess
 
-def test_example():
-    """Validate the test runner setup."""
-    assert 1 == 1
+
+class TestSteps:
+    def test_step_one(self):
+        result = subprocess.run(["ngwc", "-c", "tests/fixtures/test.txt"], capture_output=True, text=True)  # noqa: S607
+
+        assert result.stdout.strip() == "342143 test.txt"
+        assert result.returncode == 0

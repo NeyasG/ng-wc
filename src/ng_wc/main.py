@@ -19,12 +19,11 @@ def main(*args, **kwargs) -> None:
         None
     """
     parser = argparse.ArgumentParser(prog="NG Word Count", description="Parses word count in files")
-    parser.add_argument("-c", "--count", action="store_true")
-    parser.add_argument("file_path")
+    parser.add_argument("-c", "--count", help="Count the number of bytes in a file.")
 
     args = parser.parse_args()
 
-    file_path = Path(args.file_path)
+    file_path = Path(args.count)
 
     print(f"{os.path.getsize(file_path)} {file_path.name}")
 
